@@ -29,11 +29,11 @@ ko.applyBindingsWithValidation = function (viewModel, rootNode, options) {
 
 //override the original applyBindings so that we can ensure all new rules and what not are correctly registered
 var origApplyBindings = ko.applyBindings;
-ko.applyBindings = function (viewModel, rootNode) {
+ko.applyBindings = function (viewModel, rootNode, extendContextCallback) {
 
 	ko.validation.init();
 
-	origApplyBindings(viewModel, rootNode);
+	origApplyBindings(viewModel, rootNode, extendContextCallback);
 };
 
 ko.validatedObservable = function (initialValue, options) {
