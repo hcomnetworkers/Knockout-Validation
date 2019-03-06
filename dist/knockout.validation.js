@@ -1469,7 +1469,7 @@ ko.applyBindings = function (viewModel, rootNode, extendContextCallback) {
 
 	kv.init();
 
-	origApplyBindings(viewModel, rootNode, extendContextCallback);
+	origApplyBindings.apply(this, arguments)
 };
 
 ko.validatedObservable = function (initialValue, options) {
